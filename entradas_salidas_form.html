@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema CozPaq - Registro de Entrada/Salida</title>
+    <link rel="icon" type="image/png" href="output-onlinepngtools (1).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], input[type="time"], select {
+            text-align: center;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+        }
+
+        input[type="submit"] {     
+            background-color: #2b2c74;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #22234f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="output-onlinepngtools editao.png" alt="CozPaq Logo">
+</header>
+
+<h1>Registro de Entrada / Salida</h1>
+
+<form action="/entradas-salidas/registrar" method="post">
+    <label for="id_registro">ID Registro:</label>
+    <input type="text" id="id_registro" name="id_registro" required>
+
+    <label for="id_empleado">ID Empleado:</label>
+    <input type="text" id="id_empleado" name="id_empleado" required>
+
+    <label for="tipo">Tipo de Registro:</label>
+    <select id="tipo" name="tipo" required>
+        <option value="">Seleccione</option>
+        <option value="entrada">Entrada</option>
+        <option value="salida">Salida</option>
+    </select>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" required>
+
+    <label for="hora">Hora:</label>
+    <input type="time" id="hora" name="hora" required>
+
+    <label for="observaciones">Observaciones:</label>
+    <input type="text" id="observaciones" name="observaciones" maxlength="100">
+
+    <div class="submit-container">
+        <input type="submit" value="Registrar Entrada/Salida">
+    </div>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema CozPaq - Registro de Crédito de Guía</title>
+    <link rel="icon" type="image/png" href="output-onlinepngtools (1).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], input[type="date"], select {
+            text-align: center;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+        }
+
+        input[type="submit"] {     
+            background-color: #2b2c74;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #22234f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="output-onlinepngtools editao.png" alt="CozPaq Logo">
+</header>
+
+<h1>Registro de Crédito de Guía</h1>
+
+<form action="/creditos-guia/registrar" method="post">
+    <label for="id_credito">ID Crédito:</label>
+    <input type="text" id="id_credito" name="id_credito" required>
+
+    <label for="id_guia">ID Guía:</label>
+    <input type="text" id="id_guia" name="id_guia" required>
+
+    <label for="id_cliente">ID Cliente:</label>
+    <input type="text" id="id_cliente" name="id_cliente" required>
+
+    <label for="fecha_credito">Fecha de Crédito:</label>
+    <input type="date" id="fecha_credito" name="fecha_credito" required>
+
+    <label for="monto">Monto ($):</label>
+    <input type="number" id="monto" name="monto" step="0.01" min="0" required>
+
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado" required>
+        <option value="">Seleccione</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="liquidado">Liquidado</option>
+        <option value="cancelado">Cancelado</option>
+    </select>
+
+    <div class="submit-container">
+        <input type="submit" value="Registrar Crédito de Guía">
+    </div>
+</form>
+
+</body>
+</html>

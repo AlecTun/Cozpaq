@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema CozPaq - Registro de Pago</title>
+    <link rel="icon" type="image/png" href="output-onlinepngtools (1).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"], input[type="datetime-local"], select {
+            text-align: center;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+        }
+
+        input[type="submit"] {     
+            background-color: #2b2c74;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #22234f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="output-onlinepngtools editao.png" alt="CozPaq Logo">
+</header>
+
+<h1>Registro de Pago</h1>
+
+<form action="/pagos/registrar" method="post">
+    <label for="id_cliente">ID Cliente:</label>
+    <input type="text" id="id_cliente" name="id_cliente" required>
+
+    <label for="id_guia">ID Guía:</label>
+    <input type="text" id="id_guia" name="id_guia" required>
+
+    <label for="monto_pagado">Monto Pagado ($):</label>
+    <input type="number" id="monto_pagado" name="monto_pagado" step="0.01" min="0" required>
+
+    <label for="metodo_pago">Método de Pago:</label>
+    <select id="metodo_pago" name="metodo_pago" required>
+        <option value="">Seleccione</option>
+        <option value="valor1">Valor 1</option>
+        <option value="valor2">Valor 2</option>
+        <option value="valor3">Valor 3</option>
+    </select>
+
+    <label for="fecha_pago">Fecha y Hora de Pago:</label>
+    <input type="datetime-local" id="fecha_pago" name="fecha_pago" required>
+
+    <label for="id_empleado">ID Empleado:</label>
+    <input type="text" id="id_empleado" name="id_empleado" required>
+
+    <div class="submit-container">
+        <input type="submit" value="Registrar Pago">
+    </div>
+</form>
+
+</body>
+</html>

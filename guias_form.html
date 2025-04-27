@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema CozPaq - Registro de Guía</title>
+    <link rel="icon" type="image/png" href="output-onlinepngtools (1).png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        header img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="date"], input[type="number"], select {
+            text-align: center;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-container {
+            text-align: center;
+        }
+
+        input[type="submit"] {     
+            background-color: #2b2c74;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #22234f;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="output-onlinepngtools editao.png" alt="CozPaq Logo">
+</header>
+
+<h1>Registro de Guía</h1>
+
+<form action="/guias/registrar" method="post">
+    <label for="id_guia">ID Guía:</label>
+    <input type="text" id="id_guia" name="id_guia" required>
+
+    <label for="fecha_creacion">Fecha de Creación:</label>
+    <input type="date" id="fecha_creacion" name="fecha_creacion" required>
+
+    <label for="origen">Origen:</label>
+    <input type="text" id="origen" name="origen" required>
+
+    <label for="destino">Destino:</label>
+    <input type="text" id="destino" name="destino" required>
+
+    <label for="destinatario">Destinatario:</label>
+    <input type="text" id="destinatario" name="destinatario" required>
+
+    <label for="estado">Estado:</label>
+    <select id="estado" name="estado" required>
+        <option value="">Seleccione</option>
+        <option value="pendiente">Pendiente</option>
+        <option value="en tránsito">En tránsito</option>
+        <option value="entregado">Entregado</option>
+    </select>
+
+    <div class="submit-container">
+        <input type="submit" value="Registrar Guía">
+    </div>
+</form>
+
+</body>
+</html>
